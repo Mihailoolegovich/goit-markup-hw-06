@@ -404,6 +404,35 @@ img {
   background-color: var(--primary-white-color);
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 0;
+}
+
+form h2 {
+  margin-bottom: 12px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+}
+
+form .fields {
+  margin: 0 auto 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* form .fields + .fields {
+  margin-top: 10px;
+} */
+
+/* form :not(:last-child) {
+  margin-top: 10px;
+} */
+
 /* ========== Company credo ========== */
 
 .company-credo {
