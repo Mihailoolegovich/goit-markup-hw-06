@@ -302,6 +302,65 @@ img {
   background-color: var(--accent-coolor);
 }
 
+.form-fotter {
+  margin-left: 93px;
+  align-items: baseline;
+  width: 570px;
+}
+
+.form-fotter .title {
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--primary-white-color);
+}
+
+.form-fotter .subscrib {
+  display: flex;
+  align-items: baseline;
+}
+
+.form-fotter .fotter-label {
+  margin-right: 12px;
+  width: 100%;
+}
+
+.form-fotter .fotter-input {
+  height: 50px;
+  width: 100%;
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+.form-fotter .fotter-input::placeholder {
+  display: flex;
+  align-items: centr;
+  padding-left: 16px;
+  color: var(--primary-white-color);
+}
+
+.form-fotter .button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 50px;
+
+  color: var(--primary-white-color);
+  background-color: var(--accent-coolor);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.9;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid var(--accent-coolor);
+}
+
 /* ==================== */
 /* Content with index */
 /*  ====================  */
@@ -404,30 +463,156 @@ img {
   background-color: var(--primary-white-color);
 }
 
-form {
+.form {
+  outline: 2px solid green;
+  position: relative;
   display: flex;
   flex-direction: column;
   padding: 40px 0;
+  margin: 0 auto;
+  width: 448px;
 }
 
-form h2 {
+.form .title {
   margin-bottom: 12px;
   text-align: center;
+  text-transform: none;
+
+  color: var(--primary-color);
   font-weight: 700;
   font-size: 20px;
   line-height: 1.1;
   letter-spacing: 0.03em;
 }
 
-form .fields {
-  margin: 0 auto 20px;
-  display: flex;
-  flex-direction: column;
+/* .form-label {
+  margin-bottom: 10px;
+} */
+
+/*Чомусь не працює*/
+/* .form .form-label:last-child {
+  margin-bottom: 0px;
+} */
+
+.form-label {
+  margin-bottom: 10px;
+  position: relative;
 }
 
-/* form .fields + .fields {
-  margin-top: 10px;
+/* .form-label:not(:last-child) {
+  margin-bottom: 10px;
 } */
+
+.form .form-text {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  color: var(--primary-text-color);
+}
+
+.form .form-input {
+  height: 40px;
+  margin-top: 4px;
+  width: 100%;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+
+.form-label .icon {
+  position: absolute;
+  top: 70%;
+  left: 15px;
+  margin-right: 15px;
+  transform: translatey(-50%);
+}
+
+/*Чомусь не працює*/
+/* .form-input:focus-within > .icon {
+  fill: var(--primary-text-color);
+  transform: translatey(50%);
+} */
+
+/* .fotter-label .icon {
+  fill: var(--primary-text-color);
+} */
+
+.form .textarea {
+  height: auto;
+  resize: none;
+}
+
+.form .textarea::placeholder {
+  padding-top: 12px;
+  padding-left: 16px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
+}
+
+/*
+.form-label {
+   background-color: red; 
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  transform: translatey(-50%);
+  transition: transform var(--transition-duration-timing);
+}
+
+.form-input:focus + .form-label,
+.form-input:not(:placeholder-shown) + .form-label {
+  transform: translatey(-40px);
+}
+*/
+
+.form .checkbox {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkbox .form-text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: 0.03em;
+  color: var(--primary-text-color);
+}
+
+.form input[type="checkbox"] {
+  margin-right: 8px;
+  color: var(--primary-color);
+}
+
+.checkbox .link {
+  color: var(--accent-coolor);
+  text-decoration: underline;
+}
+
+.form .button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  width: 200px;
+  height: 50px;
+
+  color: var(--primary-white-color);
+  background-color: var(--accent-coolor);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.9;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid var(--accent-coolor);
+}
 
 /* form :not(:last-child) {
   margin-top: 10px;
