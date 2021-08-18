@@ -59,67 +59,68 @@
         <h1 class="title">Эффективные решения для вашего бизнеса</h1>
         <button type="button" class="button" data-modal-open>Заказать услугу</button>
       </div>
+      <!-- Form-modal -->
       <div class="backgrop is-hidden" data-modal>
         <div class="modal">
- 	        <button type="button" class="close-button" data-modal-close>
-             <svg width="11px" height="11px" >
-               <use href="images/icons.svg#icon-cross"></use>
-             </svg>
-           </button>
-          <form class="form" action="">
-          
+          <button class="close-button" type="button" data-modal-close>
+            <svg width="11px" height="11px">
+              <use href="images/icons.svg#icon-cross"></use>
+            </svg>
+          </button>
+          <!-- Form -->
+          <form class="form">
+
+
             <h2 class="title">Оставьте свои данные, мы вам перезвоним</h2>
-          
-          
+
             <label class="form-label">
+              <span class="form-text">Имя</span>
+              <input class="form-input" type="text" name="user-name" placeholder=" " autocomplete="off" />
               <span class="icon">
-                <svg width="12px" height="12px">
-                  <use href="images/icons.svg#icon-name"></use>
+                <svg width="18px" height="18px">
+                  <use href="images/icons.svg#icon-person-black"></use>
                 </svg>
               </span>
-              <span class="form-text">Имя</span>
-              <input class="form-input" type="text" name="user-name" placeholder=" " />
-              
             </label>
-          
+
             <label class="form-label">
               <span class="form-text">Телефон</span>
-              <input class="form-input" type="tel" name="tel" placeholder=" ">
+              <input class="form-input" type="tel"  name="tel" placeholder=" " autocomplete="off">
               <span class="icon">
-                <svg width="12px" height="12px">
-                  <use href="images/icons.svg#icon-tell"></use>
+                <svg width="18px" height="18px">
+                  <use href="images/icons.svg#icon-phone-black"></use>
                 </svg>
               </span>
             </label>
-          
+
             <label class="form-label">
               <span class="form-text">Почта</span>
-              <input class="form-input" type="email" name="email" autocomplete="off" placeholder=" ">
+              <input class="form-input" type="email" name="email"  placeholder=" " autocomplete="off">
               <span class="icon">
-                <svg width="12px" height="12px">
-                  <use href="images/icons.svg#icon-email"></use>
+                <svg width="18px" height="18px">
+                  <use href="images/icons.svg#icon-email-black"></use>
                 </svg>
               </span>
             </label>
-          
+
             <label class="form-label">
               <span class="form-text">Комментарий</span>
-              <textarea class="form-input textarea " name="comment" rows="7" placeholder="Введите текст"></textarea>
+              <textarea class="form-input textarea " name="comment" rows="10" placeholder="Введите текст"></textarea>
             </label>
-          
-          
+
             <label class="checkbox">
-              <span class="form-text">
+              <input class="checkbox-input" type="checkbox" name="contract">
+              <span class="checkbox-icon"></span>
+              <span class="checkbox-text">
                 Соглашаюсь с рассылкой и принимаю
                 <a class="link" href="#">Условия договора</a>
               </span>
-              <input class="rete" type="checkbox" name="contract">
             </label>
-          
-          
+
             <button class="button" type="submit">Отправить</button>
-          
+
           </form>
+         
         </div>
       </div>
     </section>
@@ -465,6 +466,23 @@
           </li>
         </ul>
       </div>
+      <!-- Form-footer  -->
+      <form class="form-footer">
+        <h2 class="title">Подпишитесь на рассылку</h2>
+        <div class="subscrib">
+          <label class="footer-label">
+            <input class="footer-input" type="email" name="email" autocomplete="off" placeholder="E-mail">
+          </label>
+          <button class="button" type="submit">
+            Подписаться
+            <span class="icon">
+              <svg width="24px" height="24px">
+                <use href="images/icons.svg#icon-telegram"></use>
+              </svg>
+            </span>
+          </button>
+        </div>
+      </form>
     </div>
   </footer>
   <script src="./js/modal.js"></script>

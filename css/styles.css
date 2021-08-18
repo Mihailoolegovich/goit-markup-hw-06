@@ -302,13 +302,15 @@ img {
   background-color: var(--accent-coolor);
 }
 
-.form-fotter {
+/* ==========  Form-footer ==========  */
+
+.form-footer {
   margin-left: 93px;
   align-items: baseline;
   width: 570px;
 }
 
-.form-fotter .title {
+.form-footer .title {
   margin-bottom: 20px;
   font-weight: 700;
   font-size: 14px;
@@ -318,17 +320,17 @@ img {
   color: var(--primary-white-color);
 }
 
-.form-fotter .subscrib {
+.form-footer .subscrib {
   display: flex;
   align-items: baseline;
 }
 
-.form-fotter .fotter-label {
+.subscrib .footer-label {
   margin-right: 12px;
   width: 100%;
 }
 
-.form-fotter .fotter-input {
+.footer-label .footer-input {
   height: 50px;
   width: 100%;
   background-color: var(--background-color);
@@ -336,19 +338,20 @@ img {
   border-radius: 4px;
 }
 
-.form-fotter .fotter-input::placeholder {
+.footer-label .footer-input::placeholder {
   display: flex;
   align-items: centr;
   padding-left: 16px;
   color: var(--primary-white-color);
 }
 
-.form-fotter .button {
+.subscrib .button {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 200px;
   height: 50px;
+  padding: 10px 30px;
 
   color: var(--primary-white-color);
   background-color: var(--accent-coolor);
@@ -358,7 +361,18 @@ img {
   letter-spacing: 0.06em;
   cursor: pointer;
   border-radius: 4px;
-  border: 1px solid var(--accent-coolor);
+  border: none;
+
+  transition: background-color var(--transition-duration-timing);
+}
+
+.subscrib .icon svg {
+  margin-left: 10px;
+}
+
+.subscrib .button:hover,
+.subscrib .button:focus {
+  background-color: #188ce8;
 }
 
 /* ==================== */
@@ -436,6 +450,8 @@ img {
   pointer-events: none;
 }
 
+/* ========== Form-modal ========== */
+
 .modal {
   opacity: 1;
   position: absolute;
@@ -459,18 +475,25 @@ img {
   height: 30px;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
-
   background-color: var(--primary-white-color);
+
+  transition: fill var(--transition-duration-timing);
+}
+
+.close-button:hover,
+.close-button:focus {
+  fill: var(--accent-coolor);
+  cursor: pointer;
 }
 
 .form {
-  outline: 2px solid green;
   position: relative;
   display: flex;
   flex-direction: column;
   padding: 40px 0;
   margin: 0 auto;
   width: 448px;
+  /* width: 100%; */
 }
 
 .form .title {
@@ -499,8 +522,8 @@ img {
   position: relative;
 }
 
-/* .form-label:not(:last-child) {
-  margin-bottom: 10px;
+/* .form-label:not(:first-child) {
+  margin-top: 10px;
 } */
 
 .form .form-text {
@@ -514,10 +537,13 @@ img {
 .form .form-input {
   height: 40px;
   margin-top: 4px;
+  padding-left: 42px;
   width: 100%;
 
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+
+  transition: border var(--transition-duration-timing);
 }
 
 .form-label .icon {
@@ -526,26 +552,28 @@ img {
   left: 15px;
   margin-right: 15px;
   transform: translatey(-50%);
+  fill: var(--primary-color);
+
+  transition: fill var(--transition-duration-timing);
 }
 
-/*Чомусь не працює*/
-/* .form-input:focus-within > .icon {
-  fill: var(--primary-text-color);
-  transform: translatey(50%);
-} */
+.form-input:focus {
+  border: 1px solid var(--accent-coolor);
+  outline: none;
+}
 
-/* .fotter-label .icon {
-  fill: var(--primary-text-color);
-} */
+.form-input:focus + .icon {
+  fill: var(--accent-coolor);
+}
 
 .form .textarea {
-  height: auto;
+  padding-left: 16px;
+  padding-top: 12px;
+  height: 120px;
   resize: none;
 }
 
 .form .textarea::placeholder {
-  padding-top: 12px;
-  padding-left: 16px;
   font-weight: 400;
   font-size: 12px;
   line-height: 1.2;
@@ -553,31 +581,51 @@ img {
   color: rgba(117, 117, 117, 0.5);
 }
 
-/*
-.form-label {
-   background-color: red; 
-  position: absolute;
-  top: 50%;
-  left: 30px;
-  transform: translatey(-50%);
-  transition: transform var(--transition-duration-timing);
-}
-
-.form-input:focus + .form-label,
-.form-input:not(:placeholder-shown) + .form-label {
-  transform: translatey(-40px);
-}
-*/
-
 .form .checkbox {
   margin-top: 10px;
   display: flex;
-  flex-direction: row-reverse;
+  /* flex-direction: row-reverse; */
   align-items: center;
   justify-content: center;
 }
 
-.checkbox .form-text {
+.checkbox-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.checkbox-icon {
+  /* opacity: 0; */
+  display: inline-block;
+  justify-content: center;
+  width: 15px;
+  height: 15px;
+  margin-right: 8px;
+  border-radius: 2px;
+  border: 2px solid var(--primary-color);
+  background-color: var(--primary-white-color);
+}
+
+.checkbox-input:checked + .checkbox-icon {
+  border: 1px solid transparent;
+  background-image: url("../images/modal_check/check.svg");
+  background-color: var(--accent-coolor);
+  /* background-size: contain; */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-origin: border-box;
+}
+
+.checkbox-text {
   font-weight: 400;
   font-size: 14px;
   line-height: 1.7;
