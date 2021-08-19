@@ -325,12 +325,9 @@ img {
   align-items: baseline;
 }
 
-.subscrib .footer-label {
+.subscrib .footer-input {
+  padding-left: 16px;
   margin-right: 12px;
-  width: 100%;
-}
-
-.footer-label .footer-input {
   height: 50px;
   width: 100%;
   background-color: var(--background-color);
@@ -338,10 +335,23 @@ img {
   border-radius: 4px;
 }
 
-.footer-label .footer-input::placeholder {
+.subscrib .footer-input::placeholder {
   display: flex;
   align-items: centr;
-  padding-left: 16px;
+  color: var(--primary-white-color);
+}
+
+.subscrib .footer-input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.footer-input:not(:focus) {
+  color: var(--primary-white-color);
+}
+
+.footer-input:focus {
+  border: 1px solid var(--border-color);
+  outline: none;
   color: var(--primary-white-color);
 }
 
